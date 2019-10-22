@@ -1,0 +1,22 @@
+def ledON():
+    print("LED button pressed")
+    if GPIO.input(40) :
+       GPIO.output(40,GPIO.LOW)
+    ledButton["text"] = "LED ON"
+    if GPIO.input(40) :
+        GPIO.output(40,GPIO.HIGH)
+    ledButton["text"] = "LED OFF"
+  
+ledButton = Button(app, text = "LED ON",command = ledON, fg="white", bg= "black", height = 2, width =8 )
+ledButton.place(relx= .9, rely=.95, anchor="c")
+
+
+
+
+option = ["male","female", "ornament"]
+
+selectO= StringVar()
+selectO.set(option[0])
+OMenu = OptionMenu(app, selectO, *option)
+OMenu.place(relx=.4,rely=.16,anchor="c")
+
